@@ -1,0 +1,44 @@
+<div class="mission-details-container" *ngIf="mission">
+  <div class="details-section">
+    <div class="rocket-info">
+      <h3>Rocket Information</h3>
+      <div class="info-content">
+        <p><strong>Rocket Name:</strong> {{ mission.rocket.rocket_name }}</p>
+        <p><strong>Mission Name:</strong> {{ mission.mission_name }}</p>
+        <p><strong>Flight Number:</strong> {{ mission.flight_number }}</p>
+      </div>
+    </div>
+
+    <div class="launch-info">
+      <h3>Launch Information</h3>
+      <div class="info-content">
+        <p><strong>Launch Site:</strong> {{ mission.launch_site.site_name_long }}</p>
+        <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+        <p><strong>Launch Date:</strong> {{ mission.launch_date_utc }}</p>
+      </div>
+    </div>
+
+    <div class="description">
+      <h3>Mission Details</h3>
+      <div class="info-content">
+        <p class="mission-details-text">{{ mission.details || 'No details available for this mission.' }}</p>
+        <p class="mission-status">
+          <strong>Launch Status:</strong> 
+          <span [class.success]="mission.launch_success" [class.failure]="mission.launch_success === false">
+            {{ mission.launch_success ? 'Successful' : (mission.launch_success === false ? 'Failed' : 'Unknown') }}
+          </span>
+        </p>
+        <p class="landing-status">
+          <span>Landing status:</span> 
+          <span [class.success]="mission.land_success" [class.failure]="mission.land_success === false">
+            {{ mission.land_success ? 'Successful' : (mission.land_success === false ? 'Failed' : 'Unknown') }}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="no-mission-selected" *ngIf="!mission">
+  <p>Please select a mission to view details.</p>
+</div>

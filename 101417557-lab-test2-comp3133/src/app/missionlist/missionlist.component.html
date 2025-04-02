@@ -1,0 +1,63 @@
+<div class="mission-container">
+  <h2>COMP 3133 - Lab Test 2 </h2>
+  
+  <!-- Filter component -->
+  <app-missionfilter (filterChange)="applyLaunchFilter($event)"></app-missionfilter>
+  
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading-state">
+    <p>Loading missions...</p>
+  </div>
+  
+  <!-- Error state -->
+  <div *ngIf="error" class="error-state">
+    <p>Error loading missions. Please try again later.</p>
+  </div>
+  
+  <!-- No missions found state -->
+  <div *ngIf="!loading && !error && filteredLaunch.length === 0" class="empty-state">
+    <p>No missions found. Try adjusting your filters.</p>
+  </div>
+  
+  <!-- Missions list -->
+  <div class="missions-grid">
+    <div *ngFor="let launch of filteredLaunch" 
+         class="mission-card" 
+         [class.selected]="selectedLaunch === launch">
+         
+      <!-- Mission details positioned above the card when selected -->
+      <div *ngIf="selectedLaunch === launch" class="mission-details-popup">
+        <app-missiondetails [mission]="selectedLaunch"></app-missiondetails>
+      </div>
+         
+      <div class="mission-header" (click)="onSelectLaunch(launch)">
+        <div class="mission-patch" *ngIf="launch.links?.mission_patch_small">
+          <img [src]="launch.links.mission_patch_small" [alt]="launch.mission_name + ' patch'">
+        </div>
+        <div class="mission-info">
+          <h3 class="mission-name">{{ launch.mission_name }}</h3>
+          <div class="mission-meta">
+            <b>
+            <span class="flight-number">Flight # {{ launch.flight_number }}</span>
+            <span class="launch-year">{{ launch.launch_year }}</span>
+            </b>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mission-footer">
+        <b>
+        <div class="rocket-type">{{ launch.rocket.rocket_name }} | {{ launch.rocket.rocket_type }}</div>
+        </b>
+        <div class="mission-links">
+          <a *ngIf="launch.links?.article_link" [href]="launch.links.article_link" target="_blank" title="News Article">
+          </a>
+          <a *ngIf="launch.links?.wikipedia" [href]="launch.links.wikipedia" target="_blank" title="Wikipedia">
+          </a>
+          <a *ngIf="launch.links?.video_link" [href]="launch.links.video_link" target="_blank" title="Video">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

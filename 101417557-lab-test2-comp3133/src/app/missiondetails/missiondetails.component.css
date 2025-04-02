@@ -1,0 +1,141 @@
+/* missiondetails.component.css */
+.mission-details-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .mission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .mission-header h2 {
+    color: #005288; /* SpaceX blue */
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .mission-patch {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mission-patch img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .details-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .details-section > div {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+  }
+  
+  .details-section h3 {
+    color: #005288; /* SpaceX blue */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 8px;
+  }
+  
+  .info-content p {
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  .mission-details-text {
+    line-height: 1.6;
+  }
+  
+  .mission-status .success {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .mission-status .failure {
+    color: #dc3545;
+    font-weight: bold;
+  }
+
+  .mission-status .unknown {
+    color: #6c757d;
+    font-weight: bold;
+  }
+  
+  .links-section {
+    margin-top: 20px;
+  }
+  
+  .links-section h3 {
+    color: #005288; /* SpaceX blue */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .links-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .link-btn {
+    text-decoration: none;
+    color: #005288; /* SpaceX blue */
+    background-color: #f0f5f9;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: 1px solid #ddd;
+  }
+  
+  .link-btn:hover {
+    background-color: #005288; /* SpaceX blue */
+    color: white;
+    border-color: #005288;
+  }
+  
+  .no-mission-selected {
+    background-color: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .details-section {
+      grid-template-columns: 1fr;
+    }
+    
+    .mission-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .mission-header h2 {
+      margin-bottom: 15px;
+    }
+  }

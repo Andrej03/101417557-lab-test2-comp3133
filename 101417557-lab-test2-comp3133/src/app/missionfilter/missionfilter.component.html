@@ -1,0 +1,73 @@
+<div class="filter-container">
+    <h3>Filter Missions</h3>
+    
+    <form class="filter-form" (ngSubmit)="onFilterSubmit()">
+      <!-- Year search input -->
+      <div class="search-year">
+        <label for="launch-year">Year</label>
+        <input 
+          type="text" 
+          id="launch-year" 
+          [(ngModel)]="launch_year" 
+          name="launch_year"
+          placeholder="Enter a year" 
+          class="year-input">
+      </div>
+      
+      <!-- Launch Success Radio Buttons -->
+      <div class="radio-group">
+        <p class="radio-title">Launch</p>
+        <div class="radio-options">
+          <div class="radio-option">
+            <input 
+              type="radio" 
+              id="launch-success" 
+              name="launch_success" 
+              [(ngModel)]="launch_success" 
+              value="true">
+            <label for="launch-success">Success</label>
+          </div>
+          <div class="radio-option">
+            <input 
+              type="radio" 
+              id="launch-failed" 
+              name="launch_success" 
+              [(ngModel)]="launch_success" 
+              value="false">
+            <label for="launch-failed">Failed</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Landing Success Radio Buttons -->
+      <div class="radio-group">
+        <p class="radio-title">Landing</p>
+        <div class="radio-options">
+          <div class="radio-option">
+            <input 
+              type="radio" 
+              id="land-success" 
+              name="land_success" 
+              [(ngModel)]="land_success" 
+              value="true">
+            <label for="land-success">Success</label>
+          </div>
+          <div class="radio-option">
+            <input 
+              type="radio" 
+              id="land-failed" 
+              name="land_success" 
+              [(ngModel)]="land_success" 
+              value="false">
+            <label for="land-failed">Failed</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Buttons -->
+      <div class="filter-buttons">
+        <button type="submit" class="submit-button">Apply Filters</button>
+        <button type="button" (click)="filterReset()" class="reset-button">Reset Filters</button>
+      </div>
+    </form>
+  </div>
