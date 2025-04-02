@@ -14,7 +14,7 @@
       <div class="info-content">
         <p><strong>Launch Site:</strong> {{ mission.launch_site.site_name_long }}</p>
         <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
-        <p><strong>Launch Date:</strong> {{ mission.launch_date_utc }}</p>
+        <p><strong>Launch Date:</strong> {{ mission.launch_date_local }}</p>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
           </span>
         </p>
         <p class="landing-status">
-          <span>Landing status:</span> 
+          <b>Landing status:</b> 
           <span [class.success]="mission.land_success" [class.failure]="mission.land_success === false">
             {{ mission.land_success ? 'Successful' : (mission.land_success === false ? 'Failed' : 'Unknown') }}
           </span>
