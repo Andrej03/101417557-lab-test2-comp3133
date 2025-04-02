@@ -1,4 +1,3 @@
-/* missiondetails.component.css */
 .mission-details-container {
     background-color: #ffffff;
     border-radius: 8px;
@@ -17,7 +16,7 @@
   }
   
   .mission-header h2 {
-    color: #005288; /* SpaceX blue */
+    color: hsl(253, 100%, 36%);
     margin: 0;
     font-size: 24px;
   }
@@ -50,7 +49,7 @@
   }
   
   .details-section h3 {
-    color: #005288; /* SpaceX blue */
+    color: hsl(253, 100%, 36%);
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 18px;
@@ -87,7 +86,7 @@
   }
   
   .links-section h3 {
-    color: #005288; /* SpaceX blue */
+    color: hsl(253, 100%, 36%);
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 18px;
@@ -101,7 +100,7 @@
   
   .link-btn {
     text-decoration: none;
-    color: #005288; /* SpaceX blue */
+    color: hsl(253, 100%, 36%);
     background-color: #f0f5f9;
     padding: 8px 16px;
     border-radius: 4px;
@@ -111,9 +110,9 @@
   }
   
   .link-btn:hover {
-    background-color: #005288; /* SpaceX blue */
+    background-color: hsl(253, 100%, 36%);
     color: white;
-    border-color: #005288;
+    border-color: hsl(253, 100%, 36%);
   }
   
   .no-mission-selected {

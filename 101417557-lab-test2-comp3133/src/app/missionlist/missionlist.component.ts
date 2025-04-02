@@ -23,7 +23,7 @@ export class MissionlistComponent implements OnInit {
   filteredLaunch: Launch[] = [];
   selectedLaunch: Launch | null = null;
 
-  // recivers
+  // recievers
   loading = true; // base set if the data is correct
   error = false; // base set if the data is correct, no errors
 

@@ -2,7 +2,7 @@
     <h3>Filter Missions</h3>
     
     <form class="filter-form" (ngSubmit)="onFilterSubmit()">
-      <!-- Year search input -->
+      <!-- Search input -->
       <div class="search-year">
         <label for="launch-year">Year</label>
         <input 
@@ -14,7 +14,7 @@
           class="year-input">
       </div>
       
-      <!-- Launch Success Radio Buttons -->
+      <!-- Launch Radio Buttons -->
       <div class="radio-group">
         <p class="radio-title">Launch</p>
         <div class="radio-options">
@@ -39,7 +39,7 @@
         </div>
       </div>
       
-      <!-- Landing Success Radio Buttons -->
+      <!-- Landing Radio Buttons -->
       <div class="radio-group">
         <p class="radio-title">Landing</p>
         <div class="radio-options">
@@ -64,7 +64,7 @@
         </div>
       </div>
       
-      <!-- Buttons -->
+      <!-- Buttons to apply and reset filters -->
       <div class="filter-buttons">
         <button type="submit" class="submit-button">Apply Filters</button>
         <button type="button" (click)="filterReset()" class="reset-button">Reset Filters</button>

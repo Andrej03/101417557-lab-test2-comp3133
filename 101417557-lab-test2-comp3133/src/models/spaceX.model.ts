@@ -1,3 +1,4 @@
+// api pattern for data manipulation and use
 export interface Rocket {
     rocket_id: string;
     rocket_name: string;
